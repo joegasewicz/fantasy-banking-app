@@ -34,7 +34,7 @@ module.exports = {
             filename: "[name].bundle.css",
         }),
         new webpack.DefinePlugin({
-            "process.env.API_URL": JSON.stringify(process.env.NOTTOBOARD_API_URL) || JSON.stringify("http://localhost:8001/api/v1"),
+            "process.env.API_URL": JSON.stringify(process.env.API_URL) || JSON.stringify("http://localhost:8001/api/v1"),
         }),
         new webpack.ProvidePlugin({
             $: "jquery",
