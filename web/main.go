@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"github.com/joegasewicz/gomek"
 	"joegasewicz/fantasy-banking-app/web/views"
 	"net/http"
@@ -15,11 +16,11 @@ func init() {
 }
 
 func main() {
-	//whitelist := [][]string{
-	//	{
-	//		"/", "GET",
-	//	},
-	//}
+	whitelist := [][]string{
+		{
+			"/", "GET",
+		},
+	}
 
 	// Gomek config
 	c := gomek.Config{
@@ -43,9 +44,9 @@ func main() {
 	// Middleware
 	app.Use(gomek.Logging)
 	app.Use(gomek.CORS)
-	//app.Use(gomek.Authorize(whitelist, func(r *http.Request) (bool, context.Context) {
-	//	return true, nil
-	//}))
+	app.Use(gomek.Authorize(whitelist, func(r *http.Request) (bool, context.Context) {
+		return true, nil
+	}))
 
 	// App
 	app.Listen(8000)
