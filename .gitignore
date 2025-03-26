@@ -1,6 +1,8 @@
 .idea
 */node_modules
-
+postgres
+*/node_modules
+*/static
 
 # Binaries for programs and plugins
 */*.exe
