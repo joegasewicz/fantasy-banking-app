@@ -1,0 +1,17 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fantasy Banking App</title>
+    <link rel="stylesheet" href="/static/main.bundle.css">
+</head>
+<body>
+    {{ template "navbar" . }}
+    {{ template "content" . }}
+    {{ template "footer" . }}
+    {{ template "scripts" }}
+</body>
+</html>
+{{ end }}
